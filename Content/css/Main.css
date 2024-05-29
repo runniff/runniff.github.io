@@ -14,7 +14,7 @@ body{
 .main-container{
     position: relative;
     margin:auto;
-    width: 696px;
+    width: 80vw;
     height: 100vh;
 }
 
@@ -24,21 +24,43 @@ body{
 
 .panel{
     position: relative;
-    height: 50%;
+    height: 25%;
+    width: 80%;
     background: var(--main-panel-colour);
     padding:25px;
     outline: 4px dotted var(--accent-colour);
     outline-offset: -20px;
     border-radius: 15px;
     font-size: 18px;
-
+    margin-bottom: 20px;
     animation: outline-in 0.1s linear forwards;
 }
 
 .panel:hover{
     animation: outline-out 0.1s linear forwards;
-    background: VAR(--control-background);
+    background: var(--control-background);
     
+}
+
+#preview{
+    
+}
+
+#preview .dz-preview{
+    display: flex;
+    position: relative;
+    outline: 1px solid var(--main-panel-colour);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--accent-colour);
+    margin-bottom: 16px;
+}
+
+#preview .dz-preview .dz-image img{
+    width: 40px
+}
+#preview .dz-preview div{
+    border: 1px solid
 }
 
 @keyframes outline-out {
