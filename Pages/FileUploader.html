@@ -24,7 +24,7 @@
 
   <div class="main-container">
     <h1 class="headder-colour">Dropzone Example</h1>
-    <hr/>
+    <hr />
 
     <div class="rics-dz-container">
       <div class="rics-dz-header-text">
@@ -49,29 +49,35 @@
       <div class="rics-dz-previews" id="previews">
         <div class="rics-dz-template" id="template">
 
-          <div class="rics-dz-thumbnail-container">
+          <!-- <div class="rics-dz-thumbnail-container">
             <span class="rics-dz-thumbnail">
               <img data-dz-thumbnail />
             </span>
+          </div> -->
+
+          <div class="rics-dz-name-container">
+            <p class="rics-dz-name" data-dz-name></p>
           </div>
 
-          <div>
-            <p class="rics-dz-name" data-dz-name></p>
+          <div class="rics-dz-error-container">
             <strong class="rics-dz-error" data-dz-errormessage></strong>
           </div>
 
-          <div>
+          <div class="rics-dz-size-container">
             <p class="ricss-dz-size" data-dz-size></p>
           </div>
 
-          <div class="progress active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+          <div class="rics-dz-progresss-container">
+            <div class="progress active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+            </div>
           </div>
 
-          <div class="rics-dz-remove" data-dz-remove>
-            <i class="material-icons">close</i>
+          <div class="rics-dz-buttons-container">
+            <div class="rics-dz-remove" data-dz-remove>
+              <i class="material-icons">close</i>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -92,7 +98,8 @@
         url: "/Pages/uploadTest.html",
         parallelUploads: 5,
         previewTemplate: previewTemplate,
-        previewsContainer: "#previews"
+        previewsContainer: "#previews",
+        createImageThumbnails: false
       });
 
       dz.on("addedfile", function (file) {
