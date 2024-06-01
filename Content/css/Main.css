@@ -51,11 +51,19 @@
     background: var(--rics-dz-container-colour);
     padding: 20px;
     border-radius: 10px;
+    z-index: 99;
 }
+
+.rics-dz-upload-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center; /* adjusted */}
 
 .rics-dz-upload-panel {
     position: relative;
     width: 100%;
+    height:225px;
     background: var(--rics-dz-panel-colour);
     padding: 25px;
     outline: 4px dotted var(--rics-dz-panel-outline-colour);
@@ -64,9 +72,15 @@
     margin-bottom: 20px;
     text-align: center;
     animation: outline-in 0.1s linear forwards;
+    cursor: pointer;
 }
 
-.rics-dz-upload-panel:hover {
+.rics.dz-upload-label {
+    padding-top: 200px;
+}
+
+.rics-dz-upload-panel:hover,
+.active {
     animation: outline-out 0.1s linear forwards;
     background: var(--rics-dz-panel-hover-colour);
 }
@@ -96,6 +110,7 @@
 .rics-dz-buttons-container {
     grid-area: buttons;
     text-align: right;
+    cursor: pointer;
 }
 
 .rics-dz-template {

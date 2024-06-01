@@ -35,8 +35,8 @@
       <form action="/Pages/uploadTest.html" id="drop-id" class="rics-dz-upload-panel center-align">
         <div id="rics-dz-upload-label">
           <i class="material-icons" id="rics-dz-upload-button">cloud_upload</i>
+          <div class="rics-dz-upload-text">Click the Button or Drop Files Here</div>
         </div>
-        <span class="rics-dz-upload-text">Click the Button or Drop Files Here</span>
       </form>
 
       <div class="rics-dz-conditions">
@@ -102,30 +102,39 @@
         createImageThumbnails: false
       });
 
-      dz.on("addedfile", function (file) {
+      dzone.on("addedfile", function (file) {
         $(".preview-container").css('visibility', 'visible');
+        console.log('Added file called');
       });
 
-      dz.on("totaluploadprogress", function (progress) {
-        var progr = document.querySelector(".progress .determinate");
+      dzone.on("totaluploadprogress", function (progress) {
+        var progr = document.querySelector(".progress .progress-bar");
         if (progr === undefined || progr === null) {
           return;
         }
-
         progr.style.width = progress + "%";
       });
 
-      dz.on('dragenter', function () {
-        $('.uploader-panel').addClass("active");
+      dzone.on('complete', function(file){
+        console.log('Complete called');
+      })
+
+      dzone.on('error', function(file, message) {
+        console.log('Error called');
       });
 
-      dz.on('dragleave', function () {
-        $('.uploader-panel').removeClass("active");
+      dzone.on('dragenter', function () {
+        $('.rics-dz-upload-panel').addClass("active");
       });
 
-      dz.on('drop', function () {
-        $('.uploader-panel').removeClass("active");
+      dzone.on('dragleave', function () {
+        $('.rics-dz-upload-panel').removeClass("active");
       });
+
+      dzone.on('drop', function () {
+        $('.rics-dz-upload-panel').removeClass("active");
+      });
+
 
     }
 
